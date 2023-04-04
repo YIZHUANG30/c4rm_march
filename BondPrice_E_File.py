@@ -1,4 +1,4 @@
 
 
-def getBondPrice_E(face, couponRate, m, yc):
+def getBondPrice_E(face, couponRate, yc):
     return(2098949)
