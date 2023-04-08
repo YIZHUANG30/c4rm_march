@@ -1,12 +1,12 @@
 
 
+
 def getBondPrice(y, face, couponRate, m, ppy=1):
-    cf = face * couponRate
-    pvcfsum = 0
-    for i in range(1,m+1):
-        py=(1+y)**(-i)
-        pvcf=pv*cf
-	pvcfsum+=pvcf 
-    
-    pvcfsum+=face*pv
-    return(pvcfsum)
+  t=int(m*ppy)
+  bondPrice=0
+  for i in range(1,t+1):
+    bondPrice+=face*couponRate/ppy*(1+y/ppy)**(-i)
+  bondPrice+=face*(1+y/ppy)**(-m*ppy)
+  return(bondPrice)
+
+
